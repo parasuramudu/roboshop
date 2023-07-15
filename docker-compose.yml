@@ -5,6 +5,7 @@ networks:
 volumes:
   mongodb:
   redis:
+  mysql:
 services:
   catalogue:
     image: catalogue:v1
@@ -51,3 +52,12 @@ services:
       - catalogue
       - redis
            
+  mysql:
+    image: mysql:v1
+    container_name: mysql
+    volumes:
+      - type: volume
+        source: mysql
+        target: /var/lib/mysql
+        volume:
+          nocopy: true
