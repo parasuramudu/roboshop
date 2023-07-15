@@ -38,16 +38,16 @@ services:
   #     - catalogue
   #     - user
   #     - cart
-  # user:
-  #   image: user:v1
-  #   container_name: user
-  #   depends_on:
-  #     - mongodb
-  #     - redis
-  # cart:
-  #   image: cart
-  #   container_name: cart
-  #   depends_on:
-  #     - catalogue
-  #     - cart
+  user:
+    image: user:v1
+    container_name: user
+    depends_on:
+      - mongodb
+      - redis
+  cart:
+    image: cart
+    container_name: cart
+    depends_on:
+      - catalogue
+      - cart
            
